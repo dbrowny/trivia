@@ -67,7 +67,7 @@ class Game
         return true;
     }
 
-    function roll($roll)
+    function roll($roll): void
     {
         echoln($this->players[$this->currentPlayer] . " is the current player");
         echoln("They have rolled a " . $roll);
@@ -118,7 +118,7 @@ class Game
         return "Rock";
     }
 
-    function askQuestion()
+    function askQuestion(): void
     {
         if ($this->currentCategory() == "Pop")
             echoln(array_shift($this->popQuestions));
