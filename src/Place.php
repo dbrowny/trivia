@@ -18,13 +18,13 @@ class Place
         }
     }
 
-    public function get(): int
-    {
-        return $this->position;
-    }
-
     public function __toString()
     {
         return (string)$this->get();
+    }
+
+    public function get(): int
+    {
+        return $this->position;
     }
 }

@@ -42,16 +42,6 @@ class Player
         $this->purses += $count;
     }
 
-    public function getPurses(): int
-    {
-        return $this->purses;
-    }
-
-    public function getPlace(): Place
-    {
-        return $this->place;
-    }
-
     public function __toString()
     {
         return $this->name;
@@ -62,6 +52,11 @@ class Player
         return ($this->getPurses() == 6);
     }
 
+    public function getPurses(): int
+    {
+        return $this->purses;
+    }
+
     public function getCurrentCategory(): string
     {
         return match ($this->getPlace()->get()) {
@@ -70,5 +65,10 @@ class Player
             2, 6, 10 => Questions::SPORTS,
             default => Questions::ROCK,
         };
+    }
+
+    public function getPlace(): Place
+    {
+        return $this->place;
     }
 }
